@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파란두루미(주)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .brand-gradient {
+            background: linear-gradient(90deg, #005F73, #0A9396);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="brand-gradient text-white text-center py-16 px-4">
+        <h1 class="text-4xl md:text-6xl font-black text-shadow flex flex-col items-center justify-center">
+            <span>파란두루미(주)</span>
+            <img src="images/parandurume-logo.png" alt="파란두루미 로고" style="margin-top:16px; width:120px; height:auto;" />
+        </h1>
+        <p class="mt-4 text-xl md:text-2xl font-light text-shadow">"모두를 위한 기술, 누구나 체험하는 세상"</p>
+        <p class="mt-2 text-lg md:text-xl font-light text-shadow"> 어디서나, 누구나, 어떤 기기에서도 기술의 벽 없이, 모두를 위한 기술을 위해​</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="introduction" class="my-12">
+            <div class="mx-auto text-center">
+                <h2 class="text-3xl font-bold text-[#005F73] mb-4">파란두루미(주) 회사 소개</h2>
+                <p class="text-lg text-gray-600 max-w-full mb-4">
+                    <strong>파란두루미(주)</strong>는 2019년 설립된 확장현실(XR) 기술 스타트업으로, 경기도 광명시 창업지원센터에 본사를 두고 있습니다. <br>회사명 <strong>‘파란두루미’</strong>는 *“당신의 비즈니스나 업무에 멋진 해결책을 가져다주기 위해 날개를 펼치는 두루미”*를 의미하며, <br>최첨단 기술로 세상에 긍정적인 변화를 가져오겠다는 기업의 비전을 담고 있습니다.
+                    </p>
+                <p class="text-lg text-gray-600">
+                    파란두루미는 기하급수적으로 발전하는 기술의 혜택을 모두가 누리는 포용적이고 번영하는 세상을 만들겠다는 철학을 가지고 있습니다. <br>이러한 철학 아래 파란두루미는 <strong>2025년 7월 경기도 예비사회적기업으로 지정</strong>되며 사회적 가치 창출 의지를 공식적으로 인정받았습니다.
+                    </p>
+                <div class="flex justify-center mt-8">
+                    <img src="images/6thNRC-hackathon-team.jpeg" alt="6th NRC Hackathon Team" class="rounded-lg shadow-lg max-w-full h-auto w-[48rem]" />
+                </div>
+                </section>
+                
+            </div>
+        </section>
+
+        <section id="solution" class="my-16">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">핵심 기술 및 제품: 헤드셋 없이 경험하는 XR</h2>
+                <p class="text-lg text-gray-600 text-center mb-8">
+                    파란두루미는 일반적으로 거대한 헤드셋(HMD)을 착용해야 하는 XR의 고정관념을 깨고, <br>기존 데스크톱이나 노트북에 소형 액세서리 장치를 부착하여 현실과 가상이 융합된 3D XR 환경을 구현합니다.
+                </p>
+                <div class="flex flex-row justify-center items-stretch gap-8">
+                <!-- 영상(왼쪽) -->
+                <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center" style="width:500px;">
+                    <a href="https://www.youtube.com/watch?v=XHHS_iHrrRE" target="_blank">
+                    <img src="https://img.youtube.com/vi/XHHS_iHrrRE/0.jpg" alt="YouTube Video 1" class="rounded-lg shadow-lg w-full h-auto hover:scale-105 transition-transform mb-4" />
+                    </a>
+                    <h3 class="text-lg font-bold text-[#0A9396] mb-2">파란두루미 XR 키트 데모 영상</h3>
+                    <p class="text-gray-600 text-center text-sm">실제 XR 키트의 작동 모습과 주요 기능을 확인할 수 있는 데모 영상입니다.</p>
+                </div>
+                <div class="my-8"></div>
+                <!-- 설명(오른쪽) -->
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-center" style="width:800px;">
+                    <h3 class="text-2xl font-bold mb-2 text-[#0A9396]">파란두루미 XR 키트</h3>
+                    <p class="text-gray-600 mb-4">
+                    이 기술이 집약된 <strong>최소기능제품(MVP)</strong>으로, 간단한 주변장치만으로 웹 기반 XR 콘텐츠를 구현할 수 있습니다. PC에 연결하면 3차원 가상물체를 모니터 화면 속에서 직접 조작하거나, 현실 공간에 증강현실(AR)로 투영하는 경험이 가능합니다.
+                    </p>
+                    <p class="text-gray-600">
+                    이 기술은 헝가리 출신 CTO 라타이 다니엘 발라즈가 개발한 <strong>Leonar3Do</strong>라는 PC 기반 VR 장치를 기반으로, 현재 파란두루미는 해당 기술을 발전시켜 별도의 HMD 없이도 교육, 의료, 훈련 등 다양한 분야에서 활용할 수 있는 범용 XR 플랫폼으로 확장하고 있습니다. 또한 <strong>Azure AI 등 최신 인공지능 기술과도 접목</strong>하여, 웹 브라우저만 있으면 누구나 XR 애플리케이션을 실행할 수 있는 환경을 구축하고 있습니다.
+                    </p>
+                </div>
+
+                </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flex flex-row justify-center items-stretch gap-8 w-full mt-12">
+                            <!-- PC/노트북 기반 XR -->
+                            <div class="flex flex-col items-center bg-white rounded-lg shadow-md p-6 w-full">
+                                <div class="text-6xl mb-4 text-[#0A9396]">🖥️</div>
+                                <h3 class="text-xl font-bold mb-2">PC/노트북 기반 XR</h3>
+                                <p class="text-gray-600 text-center">별도의 고가 HMD 없이 기존 PC 환경에서 완벽한 3D XR 구현</p>
+                            </div>
+                            <!-- 편안한 몰입 경험 -->
+                            <div class="flex flex-col items-center bg-white rounded-lg shadow-md p-6 w-full">
+                                <div class="text-6xl mb-4 text-[#0A9396]">🖐️</div>
+                                <h3 class="text-xl font-bold mb-2">편안한 몰입 경험</h3>
+                                <p class="text-gray-600 text-center">장시간 HMD 착용 시 불편함 해소 및 자연스러운 상호작용 (모니터, 전용 안경, 입력장치)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">파란두루미의 비전: 시간과 공간의 재정의</h2>
+            <p class="text-lg text-gray-600 max-w-4xl mx-auto text-center mb-10">
+                우리의 기술은 단순히 새로운 경험을 제공하는 것을 넘어, 인류가 마주한 물리적 제약을 극복하는 것을 목표로 합니다. <br>'시간 이동'과 '공간 이동'은 이러한 비전을 구체화한 핵심 개념입니다.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-stretch gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8 flex-1">
+                    <h3 class="text-2xl font-bold text-[#CA6702] mb-4">⏳ 시간 이동 (Time Shifting)</h3>
+                    <p class="text-gray-600">
+                        정해진 일정에 구애받지 않고, 사용자가 원하는 바로 그 시간에 필요한 경험을 할 수 있게 합니다. <br>교육생들은 언제든 가상 교육장에서 실습을 반복할 수 있고, 선생님들은 학생의 실습을 함께 보며 지도할 수 있습니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 flex-1">
+                    <h3 class="text-2xl font-bold text-[#CA6702] mb-4">🌐 공간 이동 (Space Shifting)</h3>
+                    <p class="text-gray-600">
+                        물리적 위치의 제약 없이 협업을 하거나 가상 공간을 탐험합니다. <br>전 세계의 엔지니어들이 하나의 가상 입체 모델을 보며 실시간으로 협업하고, 학생들은 고가의 장비 없이도 교실에서 고대 유적지를 탐사할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="market-focus" class="my-16">
+             <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">전략적 시장: 차세대 의료 교육 선도</h2>
+             <p class="text-lg text-gray-600 max-w-full mx-auto text-center mb-10">
+                우리는 무한한 XR 시장의 잠재력 속에서, 가장 시급하고 중요한 문제를 해결할 수 있는 <strong>'의료 교육'</strong> 분야에 집중하고 있습니다. <br>HMD의 불편함이 없는 저희 솔루션은 장시간의 정밀한 훈련이 필수적인 의료 교육에 최적화되어 있습니다.
+            </p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                <div class="chart-container">
+                    <canvas id="marketFocusChart"></canvas>
+                </div>
+                <p class="text-center text-gray-500 mt-4">파란두루미의 B2B 확장 전략</p>
+            </div>
+        </section>
+
+        <section id="milestones" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#005F73] mb-12">주요 활동 및 성과 🏆</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2 flex items-center">
+                        <span class="text-3xl mr-2 text-[#0A9396]">🚀</span> CES 2025 참가 및 XR 기술 선보임
+                    </h3>
+                    <p class="text-sm leading-snug tracking-wide text-gray-600">
+                        2025년 1월 세계 최대 IT 박람회 CES 2025에 참가하여 혁신적인 HMD 없는 XR 데모를 선보였습니다. <br>글로벌 무대에서 기술 경쟁력을 검증받는 계기가 되었습니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2 flex items-center">
+                        <span class="text-3xl mr-2 text-[#0A9396]">🤝</span> 산학 협력 및 의료 분야 진출
+                    </h3>
+                    <p class="text-sm leading-snug tracking-wide text-gray-600">
+                        2024년 12월 가천대학교 길병원 가천의생명융합연구원과 MOU를 체결, AI와 XR 기술을 활용한 의료·교육 분야 혁신 협력을 추진하고 있습니다. 가상 해부학, 수술 트레이닝 등 의료 교육의 현실감을 높이는 데 기여합니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2 flex items-center">
+                        <span class="text-3xl mr-2 text-[#0A9396]">🏘️</span> 지역사회 연계 및 지원 프로그램
+                    </h3>
+                    <p class="text-sm leading-snug tracking-wide text-gray-600">
+                        광명시 창업지원센터 입주 기업 선정, 투자유치 역량강화 액셀러레이팅 프로그램 참여, <strong>신용보증기금 ‘리틀펭귄’ 선정</strong> 등 지역 혁신 생태계 내에서 다양한 지원과 인지도를 확보했습니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2 flex items-center">
+                        <span class="text-3xl mr-2 text-[#0A9396]">🔬</span> 연구개발 역량 강화
+                    </h3>
+                    <p class="text-sm leading-snug tracking-wide text-gray-600">
+                        2025년 6월 한국산업기술진흥협회(KOITA)로부터 연구개발전담부서 인정을 받아 공식 R&D 조직을 갖추고, 국내외 특허출원과 기술 인증을 추진하며 기술 완성도를 높이고 있습니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2 flex items-center">
+                        <span class="text-3xl mr-2 text-[#0A9396]">🌍</span> 글로벌 파트너십 추진
+                    </h3>
+                    <p class="text-sm leading-snug tracking-wide text-gray-600">
+                        2025년 4월 <strong>헝가리 Leopoly와 조인트벤처(JV) 설립을 위한 업무협약(LOI) 체결</strong>, <strong>Microsoft Founders Hub 공식 승인</strong> 등 세계 유수 기업들과의 네트워크를 구축하며 해외 시장 진출을 모색 중입니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="aging-tech" class="my-16">
+            <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center" style="width:1500px;">
+            <div class="my-3"></div>
+            <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">고령자 친화 기술 개발 (Aging-Tech)</h2>
+            <div class="flex flex-row gap-10 items-start">
+                <!-- 영상(왼쪽) -->
+                <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center" style="width:600px;">
+                    <a href="https://www.youtube.com/watch?v=zYWCEB4SyY8" target="_blank">
+                        <img src="https://img.youtube.com/vi/zYWCEB4SyY8/0.jpg" alt="YouTube Video 2" class="rounded-lg shadow-lg w-full h-auto hover:scale-105 transition-transform mb-4" />
+                    </a>
+                    <h3 class="text-lg font-bold text-[#0A9396] mb-2">Unity와 Chat GPT를 활용한 MCI 게임 제작 튜토리얼</h3>
+                    <p class="text-gray-600 text-center text-sm">Unity와 Chat GPT를 활용해서 MCI(경도인지장애) 예방 게임을 제작해봅시다.<br>파란두루미는 경도 인지장애 예방과 관련된 활동도 하고 있습니다.</p>
+                </div>
+                <!-- 내용(오른쪽) -->
+                <div class="flex flex-col gap-8 flex-1">
+                    <div class="bg-white rounded-lg shadow-lg p-6" style="max-width:750px;">
+                        <h3 class="text-xl font-bold text-[#0A9396] mb-4">해커톤 성과</h3>
+                        <ul class="list-disc list-inside text-gray-700 mb-2">
+                            <li>제6회 국립재활원 보조기기 해커톤 본선 진출 (2024.8.8)</li>
+                            <li>출품작: 노인 낙상방지 알림 기기</li>
+                            <li>IoT 센서 기반으로 낙상 사고를 감지 → 보호자/응급서비스에 즉시 알림</li>
+                            <li>현재 본선 과제 진행 중</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6" style="max-width:750px;">
+                        <h3 class="text-xl font-bold text-[#0A9396] mb-4">인지훈련 콘텐츠</h3>
+                        <ul class="list-disc list-inside text-gray-700 mb-2">
+                            <li>MCI(경도인지장애) 인지훈련 게임 콘텐츠 자체 개발</li>
+                            <li>단순 시연 영상이 아니라 시청자가 직접 따라 제작할 수 있는 튜토리얼형 콘텐츠를 유튜브에 공개 </li>
+                            <li>어르신들이 즐겁게 참여하며 두뇌 활성화 및 치매 예방에 도움</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6" style="max-width:750px;">
+                        <h3 class="text-xl font-bold text-[#CA6702] mb-4">축적된 역량</h3>
+                        <ul class="list-disc list-inside text-gray-700 mb-2">
+                            <li>보조기기: 낙상방지 디바이스</li>
+                            <li>콘텐츠: 인지훈련 게임</li>
+                            <li>헬스케어: 의료 XR 및 재활 연계</li>
+                        </ul>
+                        <p class="text-gray-600 mt-2">→ 파란두루미만의 에이징테크 포트폴리오 구축</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6" style="max-width:750px;">
+                        <h3 class="text-xl font-bold text-[#CA6702] mb-4">향후 비전 및 전략</h3>
+                        <ul class="list-disc list-inside text-gray-700 mb-2">
+                            <li>낙상방지 솔루션 고도화: 센서 정밀도 향상, 웨어러블 연동, 요양시설 맞춤형 시스템 개발</li>
+                            <li>실버케어 XR 콘텐츠: VR 퍼즐, AR 운동, 가상 소셜 활동 등 고령층 맞춤 XR 체험 확장</li>
+                            <li>XR 재활 기기 + 디지털 헬스 연계: 원격 재활치료 및 환자 데이터 기반 맞춤형 피드백 제공</li>
+                            <li>글로벌 시장 진출: CES, JV 설립, 해외 파트너십을 통한 미국·유럽 시장 확대</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="market-growth" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">글로벌 XR 시장의 폭발적 성장</h2>
+            <p class="text-lg text-gray-600 max-w-4xl mx-auto text-center mb-10">
+                확장현실(XR) 시장은 5G 기술의 발전과 몰입형 원격 교육 수요 증가에 힘입어 전례 없는 속도로 성장하고 있습니다. <br>파란두루미는 이 거대한 흐름의 중심에서 시장을 선도할 준비가 되어 있습니다.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                    <div class="text-center">
+                         <p class="text-7xl font-black text-[#EE9B00]">42.36%</p>
+                         <p class="text-xl font-bold text-gray-700 mt-2">연평균 성장률 (CAGR)</p>
+                         <p class="text-gray-500">(2025-2030년 예측)</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                     <div class="chart-container h-64 md:h-auto">
+                        <canvas id="marketGrowthChart"></canvas>
+                    </div>
+                    <p class="text-center text-gray-500 mt-4">글로벌 XR 시장 규모 예측</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competitive-advantage" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">독보적인 경쟁 우위</h2>
+            <p class="text-lg text-gray-600 max-w-4xl mx-auto text-center mb-10">
+                경쟁이 치열한 XR 시장에서 파란두루미는 '사용자 경험'이라는 본질에 집중하여 차별화된 가치를 제공합니다. <br>HMD의 한계를 극복한 우리의 접근 방식은 시장의 판도를 바꿀 것입니다.
+            </p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                <div class="chart-container">
+                    <canvas id="competitorChart"></canvas>
+                </div>
+                <p class="text-center text-gray-500 mt-4">주요 의료 XR 솔루션 접근 방식 비교</p>
+            </div>
+        </section>
+
+        <section id="roadmap" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#005F73] mb-12">향후 비전 및 전략 🗺️</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-[#94D2BD] text-[#005F73] rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-2">글로벌 시장 진출</h3>
+                    <p>CES 2025를 발판 삼아 해외 파트너십 강화 및 미국, 유럽 시장에 XR 솔루션 소개.</p>
+                </div>
+                <div class="bg-[#E9D8A6] text-[#CA6702] rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-2">교육 분야 확장</h3>
+                    <p>초중고생을 위한 XR 콘텐츠 개발 및 교과 과정 접목. 가상 과학실험, 역사 체험, 코딩 교육 등 온디맨드 맞춤형 교육 실현.</p>
+                </div>
+                <div class="bg-[#EE9B00] text-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-2">의료·헬스케어 분야 확장</h3>
+                    <p>병원 협력 기반 의학 교육 시뮬레이터, 원격의료 트레이닝, 재활 치료 보조 등 의료 서비스 질 향상 및 환자 체험 개선.</p>
+                </div>
+                <div class="bg-[#BB3E03] text-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-2">지속적인 R&D와 인재 육성</h3>
+                    <p>XR 핵심 기술 고도화 및 AI·XR 융합기술 역량 강화. <strong>"XR = 파란두루미"</strong> 비전 정착.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-8">
+        <p class="font-bold text-xl">파란두루미(주)</p>
+        <p class="mt-2">모두를 위한 기술, 누구나 체험하는 세상</p>
+        <a href="http://paranduru.me" target="_blank" class="mt-4 inline-block bg-[#0A9396] hover:bg-[#005F73] text-white font-bold py-2 px-4 rounded">
+            홈페이지 방문하기
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapLabel = (str, maxWidth) => {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+
+            const sharedTooltipOptions = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            };
+
+            const marketFocusCtx = document.getElementById('marketFocusChart').getContext('2d');
+            new Chart(marketFocusCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['의료 교육', '항공/국방 훈련', '제조업 시뮬레이션', '기타 전문분야'],
+                    datasets: [{
+                        label: 'B2B 시장 집중도',
+                        data: [55, 20, 15, 10],
+                        backgroundColor: ['#0A9396', '#94D2BD', '#E9D8A6', '#EE9B00'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'B2B 목표 시장 비중'
+                        },
+                        tooltip: sharedTooltipOptions.plugins.tooltip
+                    }
+                }
+            });
+
+            const marketGrowthCtx = document.getElementById('marketGrowthChart').getContext('2d');
+            new Chart(marketGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2025', '2026', '2027', '2028', '2029', '2030'],
+                    datasets: [{
+                        label: '시장 규모 (단위: 억 달러)',
+                        data: [450, 640, 910, 1290, 1830, 2600],
+                        fill: true,
+                        backgroundColor: 'rgba(148, 210, 189, 0.2)',
+                        borderColor: '#0A9396',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: sharedTooltipOptions.plugins.tooltip
+                    }
+                }
+            });
+
+            const competitorCtx = document.getElementById('competitorChart').getContext('2d');
+            const rawLabels = [
+                '장시간 사용 편의성',
+                '사용자 고립감 해소',
+                '초기 도입 비용',
+                'VR/AR 전환 유연성'
+            ];
+            const wrappedLabels = rawLabels.map(label => wrapLabel(label, 16));
+
+            new Chart(competitorCtx, {
+                type: 'bar',
+                data: {
+                    labels: wrappedLabels,
+                    datasets: [
+                        {
+                            label: '파란두루미 (PC 기반)',
+                            data: [90, 95, 70, 85],
+                            backgroundColor: '#0A9396',
+                            borderColor: '#005F73',
+                            borderWidth: 1
+                        },
+                        {
+                            label: '경쟁사 (HMD 기반)',
+                            data: [40, 30, 60, 50],
+                            backgroundColor: '#EE9B00',
+                            borderColor: '#CA6702',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + "%"
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: '솔루션 경쟁력 비교 (상대적 평가)'
+                        },
+                        tooltip: sharedTooltipOptions.plugins.tooltip
+                    }
+                }
+<section id="durubird" class="my-16 bg-gradient-to-r from-gray-900 to-blue-900 text-white rounded-lg p-10">
+            <h2 class="text-4xl font-bold text-center mb-4">DuruBird: 헤드셋 없이 가능한 비접촉 XR 인터페이스</h2>
+            <p class="text-xl text-center mb-10">손을 사용할 수 없는 상황에서도 완벽한 컴퓨터 제어가 가능한 혁신적 솔루션</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-[#94D2BD]">🎯 핵심 기능</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-[#EE9B00] mr-2">✓</span>
+                            <div>
+                                <strong>비접촉 제스처 인식:</strong> 손동작만으로 3D 모델 조작 및 인터페이스 제어
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#EE9B00] mr-2">✓</span>
+                            <div>
+                                <strong>멀티모니터 지원:</strong> 2대 이상의 모니터를 사용하는 환경에서도 자연스러운 연속 이동
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#EE9B00] mr-2">✓</span>
+                            <div>
+                                <strong>웹 기반 제스처 인식:</strong> 별도 설치 없이 웹캠만으로 즉시 사용 가능
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#EE9B00] mr-2">✓</span>
+                            <div>
+                                <strong>커스텀 동작 설정:</strong> 사용자가 직접 제어 동작을 설정하고 저장 가능
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-[#94D2BD]">💡 핵심 차별점</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 rounded p-4">
+                            <h4 class="font-bold text-[#E9D8A6] mb-2">기존 경쟁사 대비 우위</h4>
+                            <p class="text-sm">• 정확도: 일반 웹캠으로도 70% 이상의 인식률</p>
+                            <p class="text-sm">• 특화 분야: 의료·교육·XR 특화 UX 제공</p>
+                            <p class="text-sm">• 레퍼런스: 글로벌 PoC 및 실증 사례 보유</p>
+                        </div>
+                        <div class="bg-white/5 rounded p-4">
+                            <h4 class="font-bold text-[#E9D8A6] mb-2">기술적 강점</h4>
+                            <p class="text-sm">• MediaPipe 기반 Hand tracking 기술 적용</p>
+                            <p class="text-sm">• STT 엔진과 연동하여 음성 명령 동시 지원</p>
+                            <p class="text-sm">• SaaS SDK/API 제공으로 다양한 플랫폼 연동</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white text-gray-800 rounded-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-center mb-6 text-[#005F73]">주요 활용 분야</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-5xl mb-3">🏥</div>
+                        <h4 class="font-bold text-lg mb-2">의료 분야</h4>
+                        <p class="text-sm">수술실, 진단실에서 멸균 상태 유지하며 시스템 제어</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl mb-3">🏭</div>
+                        <h4 class="font-bold text-lg mb-2">제조 분야</h4>
+                        <p class="text-sm">클린룸, 위험 환경에서 안전하게 장비 조작</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl mb-3">🎓</div>
+                        <h4 class="font-bold text-lg mb-2">교육 분야</h4>
+                        <p class="text-sm">3D 모델 조작을 통한 몰입형 학습 경험 제공</p>
+                    </div>
+                           
+            <div class="mt-8 text-center">
+                <p class="text-lg mb-4">DuruBird는 별도의 장비 없이 웹캠과 소프트웨어만으로 간편하게 설치할 수 있는 비접촉 인터페이스 솔루션입니다.</p>
+                <div class="inline-block bg-white/20 rounded-lg p-4">
+                    <p class="font-bold text-[#94D2BD]">🚀 제품 제공 형태</p>
+                    <p>웹 기반 제스처 인식 + 커스텀 동작 설정 도구 + SaaS SDK/API</p>
+                </div>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white/10 rounded-lg p-2">
+                        <img src="images/durubird-hand-tracking.jpg" alt="손 제스처 추적 기술" class="w-full h-32 object-cover rounded" />
+                        <p class="text-xs mt-2">MediaPipe 기반 추적</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-2">
+                        <img src="images/durubird-multi-monitor.jpg" alt="멀티 모니터 지원" class="w-full h-32 object-cover rounded" />
+                        <p class="text-xs mt-2">다중 모니터 연속 제어</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-2">
+                        <img src="images/durubird-3d-control.jpg" alt="3D 객체 제어" class="w-full h-32 object-cover rounded" />
+                        <p class="text-xs mt-2">3D 모델 직관적 조작</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aging-tech" class="my-16">
+            <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center" style="width:1500px;">
+            });
+        });
+
+    </script>
+</body>
+</html>
